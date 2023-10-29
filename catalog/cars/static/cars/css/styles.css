@@ -1,0 +1,241 @@
+body {
+    front-famaly: 'Open San';
+    margin: 0;
+    padding: 10;
+    height: 100%;
+    width: 100%
+    color: #444;
+}
+
+.header {
+    background: #384c76;
+    height: 60px;
+    margin-top:0px;
+}
+
+.header ul {
+    color: white;
+    margin: 0; /* Обнуляем значение отступов */
+
+}
+
+.header ul li {
+    display: inline-block; /* Отображать как строчный элемент */
+    margin: 11px 34px 1px 76px; /* Отступ слева */
+    padding: 9px; /* Поля вокруг текста */
+}
+.header .leftimg {
+  float: left;
+  margin: -11px 15px 15px 0;
+ }
+.header ul li a{
+    font-family: 'Open Sans',sans-serif;
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    margin: 9px
+     padding: 20px 25px;
+}
+a {
+	position: relative;
+	color: #blue; /*задаём цвет ссылки*/
+	cursor: pointer;
+	line-height: 1; /*задаём высоту строки*/
+	text-decoration: none; /*убираем подчёркивание*/
+	text-align: center;
+
+}
+.header a:after {
+	display: block;
+	position: absolute;
+	left: 0; /*изменить на right:0;, чтобы изменить направление подчёркивания */
+	width: 0;/*задаём длинну линии до наведения курсора*/
+	height: 2px; /*задаём ширину линии*/
+	background-color: #ffff; /*задаём цвет линии*/
+	content: "";
+	transition: width 0.3s ease-out; /*задаём время анимации*/
+}
+
+a:hover:after,
+a:focus:after {
+	width: 100%;}
+
+.list-pages {
+    text-align: center;
+    margin: 0 0 20px 0;
+}
+
+.list-pages ul {
+    margin: 20px 0px 0px 350px;
+    padding: 0;
+    list-style: none;
+}
+
+.list-pages ul li {
+    display: inline-block;
+    margin: 0 20px 0 0;
+    background: #F5F5F5;
+}
+
+.list-pages .page-num, .page-num-selected {
+    display: inline-block;
+    width: 60px;
+    height: 44px;
+    padding: 16px 0 0 0;
+    border: 1px solid #d0d0d0;
+    border-radius: 30px;
+}
+
+.list-pages a {
+    color: #000;
+    front-size: 24px;
+    text-decoration: none;
+    padding: 15px 20px;
+}
+
+.list-pages .page-num:hover {
+    box-shadow: 3px 3px 1px #d0d0d0;
+}
+
+.list-pages .page-num-selected {
+    border: none;
+    color: #000;
+    front-size: 20px;
+}
+
+.list-pages .page-num-selected:hover {
+    box-shadow: none;
+}
+
+
+
+/* Элемент | http://127.0.0.1:8000/auto/ */
+
+body > h1:nth-child(1)  {
+  color: crimson;
+  text-align: center;
+  font-style: initial;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+
+
+/* Элемент | http://127.0.0.1:8000/auto/ */
+
+body > h1:nth-child(4) {
+  text-align: center;
+}
+
+.okna ul li{
+  display: inline-grid;
+  background: #F5F5F5;
+  border: groove;
+  text-align: center;
+  line-height: 1.5;
+  width: 360px;
+  padding: inherit;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  padding-top: 10px;
+
+}
+.okna > form:nth-child(1) > p:nth-child(7) {
+margin-right: 155px;
+}
+
+
+
+body > ul:nth-child(5) > li > img {
+padding: 5px;
+width: 403px;
+}
+
+body > ul:nth-child(5) > li > p {
+width: 400px;
+text-align: center;
+
+.form-input {
+    width: 200px;
+    font-size: 16px;
+}
+
+.form-label {
+    display: inline-block;
+    min-width: 75px;
+    vertical-align: top;
+}
+
+.form-error ul {
+    list-style: none;
+    padding: 0;
+    color: #CC0000;
+}
+
+body > form {
+padding: 15px;
+text-align: right;
+width: 850px;
+}
+
+/* Регистрация */
+
+.warning a{
+    color: red;
+}
+
+.center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 70vh;
+}
+
+.card{
+    border: solid 1px #f2f2f2;
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: rgb(11 43 158 / 15%) 0px 6px 20px -6px;
+    min-width: 400px;
+}
+
+.form-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.btn {
+    padding: 0.25rem 0.75rem;
+    border-radius: 5px;
+    background-color: #ffffff;
+    border: solid 1px #ffffff;
+    color: #212121;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 1rem;
+    min-width: 6rem;
+    text-align: center;
+}
+
+.btn:hover {
+    text-decoration: none;
+}
+
+.btn-outline {
+    border: solid 1px #ee394c;
+}
+
+.btn-primary {
+    border: solid 1px #ee394c;
+    background-color: #ee394c;
+    color: #ffffff;
+}
+select {
+  width: 200px;
+  height: 30px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+

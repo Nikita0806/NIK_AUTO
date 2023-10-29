@@ -1,0 +1,43 @@
+{% extends 'cars/base.html' %}
+
+{% block content %}
+<h1>{{ st.marka }} {{ st.model }} {{ st.cuzov }}</h1>
+  <style>
+   .leftimg {
+    float:left; /* Выравнивание по левому краю */
+    margin: 0px 15px 15px 0; /* Отступы вокруг картинки */
+   }
+   .rightimg  {
+    float: right; /* Выравнивание по правому краю  */
+    margin: 7px 0 7px 7px; /* Отступы вокруг картинки */
+   }
+  </style>
+{% if ca.photo1 %}
+    <img src="{{ ca.photo1.url }}"width="490" height="350" alt="Cars photo" class="leftimg" />
+{% endif %}
+{% if ca.photo2 %}
+    <img src="{{ ca.photo2.url }}"width="490" height="350" alt="Cars photo" class="leftimg" />
+{% endif %}
+{% if ca.photo3 %}
+    <img src="{{ ca.photo3.url }}"width="490" height="350" alt="Cars photo" class="leftimg" />
+{% endif %}
+<div style="width: fit-content;background-color: rgba(20, 20, 20, 0.5);">
+
+ <ul style="padding-left: 530px;list-style-type: none;font-size: larger;line-height: 2;color: white;"><p >
+   <li> <b style="color: #D5D5D5">Марка:  </b> {{ca.marka }}</li>
+<li><b style="color: #D5D5D5">Модель:</b> {{ca.model }}<br /></li>
+<li><b style="color: #D5D5D5">Кузов:</b> {{ca.cuzov }}</li>
+<li><b style="color: #D5D5D5">Цвет:</b> {{ca.cvet }}<br /></li>
+<li><b style="color: #D5D5D5">Дата производства:</b> {{ca.data }} год</li>
+</ul>
+     <ul style="position: absolute;width: 524.983px;padding-left: 819px;top: 510.7px;list-style-type: none;font-size: larger;line-height: 2;color: white;"><li><b style="color: #D5D5D5">ПТС:</b> {{ca.pts }}<br /></li>
+<li><b style="color: #D5D5D5">Пробег:</b> {{ca.probeg }} км.</li>
+<li><b style="color: #D5D5D5">Владельцев:</b> {{ca.vlad }}<br /></li>
+<li><b style="color: #D5D5D5">Цена:</b> {{ca.price }} р.</li>
+     <li><b style="color: #D5D5D5"> Характеристики:</b> {{ca.obem }}/{{ca.trans }}/{{ca.priv }}/{{ca.ls }}л.с./{{ca.top }}<br /></li>
+         </ul>
+<ul><li style="font-size: larger;margin-right: 42px;list-style-type: none;color: white;background-color: rgba(20, 20, 20, 0.8);text-align: center;"><b style="color: #D5D5D5">Описание:</b><br /> {{ca.opis }}</li></p>
+     </ul>
+
+</div>
+{% endblock %}

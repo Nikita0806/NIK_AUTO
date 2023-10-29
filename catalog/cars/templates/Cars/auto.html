@@ -1,0 +1,236 @@
+<!--<style>-->
+<!--body {-->
+<!--    font-family: Arial, Helvetica, sans-serif;-->
+<!--    background-color: black;-->
+<!--}-->
+
+<!--* {-->
+<!--    box-sizing: border-box;-->
+<!--}-->
+
+<!--/* Add padding to containers */-->
+<!--.container {-->
+<!--    padding: 16px;-->
+<!--    background-color: white;-->
+<!--}-->
+
+<!--/* Full-width input fields */-->
+<!--input[type=text], input[type=password] {-->
+<!--    width: 100%;-->
+<!--    padding: 4px;-->
+<!--    margin: 1px 0 0px 0;-->
+<!--    display: inline-block;-->
+<!--    border: none;-->
+<!--    background: #f1f1f1;-->
+<!--}-->
+
+<!--input[type=text]:focus, input[type=password]:focus {-->
+<!--    background-color: #ddd;-->
+<!--    outline: none;-->
+<!--}-->
+
+<!--/* Overwrite default styles of hr */-->
+<!--hr {-->
+<!--    border: 1px solid #f1f1f1;-->
+<!--    margin-bottom: 25px;-->
+<!--}-->
+<style>
+#id_marka{
+    padding-right: 218px;
+    padding-bottom: 5px;
+    margin-top: 4px;
+    background: #f1f1f1;
+    border-top-style: solid;
+    border-left-style: solid;
+}
+#id_model{
+    padding-right: 218px;
+    padding-bottom: 5px;
+    margin-top: 4px;
+    background: #f1f1f1;
+    border-top-style: solid;
+    border-left-style: solid;
+}
+#id_data{
+    padding-right: 223px;
+    padding-bottom: 5px;
+    margin-top: 4px;
+    background: #f1f1f1;
+    border-top-style: solid;
+    border-left-style: solid;
+}
+#id_cuzov{
+    padding-right: 183px;
+    padding-bottom: 5px;
+    margin-top: 4px;
+    background: #f1f1f1;
+    border-top-style: solid;
+    border-left-style: solid;
+}
+#id_price {
+  padding-right: 5px;
+  padding-left: 6px;
+  display: inline-block;
+  height: 24px;
+  width: 287px;
+  background: #f1f1f1;
+  border-top-style: solid;
+  border-left-style: solid;
+  margin-top: 4px;
+}
+#id_probeg {
+  padding-right: 5px;
+  padding-left: 6px;
+  display: inline-block;
+  height: 24px;
+  width: 287px;
+  background: #f1f1f1;
+  border-top-style: solid;
+  border-left-style: solid;
+  margin-top: 4px;
+}
+
+#id_start_probeg {
+width: 89px;
+  margin-right: 127px;
+  margin-top: 4px;
+  background: #f1f1f1;
+  border-top-style: solid;
+  border-left-style: solid;
+}
+#id_end_probeg {
+width: 89px;
+margin-left: -7px;
+margin-right: 43px;
+  margin-top: 4px;
+background: #f1f1f1;
+  border-top-style: solid;
+  border-left-style: solid;
+}
+.okna > form:nth-child(1) > p:nth-child(7) > label:nth-child(1) {
+margin-right: 146px;
+margin-left: 18px;
+}
+.okna > form:nth-child(1) > p:nth-child(8) {
+margin-top: -5px;
+margin-left: 25px;
+margin-right: 173px;
+}
+.okna > form:nth-child(1) > p:nth-child(9) {
+margin-top: -64px;
+margin-left: 189px;
+margin-right: 20px;
+}
+
+#id_start_price {
+width: 89px;
+  margin-left: 6px;
+  margin-top: 4px;
+  margin-right: 3px;
+  background: #f1f1f1;
+  border-top-style: solid;
+  border-left-style: solid;
+}
+.okna > form:nth-child(1) > p:nth-child(6) {
+margin-right: 169px;
+margin-left: 18px;
+}
+
+#id_end_price {
+width: 89px;
+  margin-left: 6px;
+  margin-top: 4px;
+  margin-right: 3px;
+  background: #f1f1f1;
+  border-top-style: solid;
+  border-left-style: solid;
+}
+.okna > form:nth-child(1) > p:nth-child(7) {
+margin-top: -60px;
+margin-left: 110px;
+margin-right: -46px;
+}
+.okna > form:nth-child(1) > p:nth-child(7) > label:nth-child(1) {
+margin-left: 45px;
+margin-right: 41px;
+margin-top: 0px;
+}
+
+
+.registerbtn {
+    background-color: #384c76;
+    color: white;
+    padding: 4px 8px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+}
+
+.registerbtn:hover {
+    opacity: 1;
+}
+
+/* Add a blue text color to links */
+a {
+    color: dodgerblue;
+}
+
+/* Set a grey background color and center the text of the "sign in" section */
+.signin {
+    background-color: #f1f1f1;
+    text-align: center;
+}
+</style>
+
+{% extends 'cars/base.html' %}
+{% load humanize %}
+{% block content %}
+    <h1>{{ title }}</h1>
+
+<div class="okna">
+        <form method="get" action="{% url 'auto' %}" style="width: 290px;border-radius: 10px;border: groove;text-align: center;left: 1.8%;position: fixed;top: 23%;padding: 12px;background: #F5F5F5;/*! padding-bottom: 2px; */padding-top: 0px;margin-bottom: 2px;margin-top: -14px;">
+            <p><b>Фильтер:</b></p>
+            {{ st_filter.form.as_p }}
+            <button type="submit" class="registerbtn">Искать</button>
+        </form>
+    {% if not user.is_authenticated %}
+    <p style="position: fixed;margin-left: 32px;margin-top: 489px;text-align: center;border: groove;padding-bottom: 3px;padding-right: 3px;padding-top: 3px;padding-left: 2px;background: #F5F5F5;border-radius: 10px;">Вы можете предложить свой автомобиль,<br /> нам на продажу.<br /> Для этого зарегистрируйтесь на сайте!</p>
+    {% endif %}
+    <ul style="padding-left: 0px;margin-left: 360px;">
+        {% for ca in cars %}
+        <li class="okna-1">
+             <a href="{{ ca.get_absolute_url }}" ><img src="{{ ca.photo1.url }}" width="290" height="200" alt="Cars photo" class="leftimg" /></a>
+            <p>{{ ca.marka }} {{ ca.model }} <br /> {{ ca.obem }} л. ({{ ca.ls }} л.с) {{ ca.trans }} {{ ca.probeg|intcomma }} км. {{ ca.data }} год <br /><b>{{ ca.price|intcomma }} руб.</b> </p>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% if page_obj.has_other_pages %}
+<nav class="list-pages">
+     <ul>
+         {% if page_obj.has_previous %}
+    <li class="page-num">
+        <a href="?page={{ page_obj.previous_page_number }}">&lt;</a>
+    </li>
+    {% endif %}
+         {% for p in paginator.page_range %}
+            {% if page_obj.number == p %}
+                <li class="page-num page-num-selected">{{ p }}</li>
+            {% elif p >= page_obj.number|add:-2 and p <= page_obj.number|add:2 %}
+                <li class="page-num">
+                    <a href="?page={{ p }}">{{ p }}</a>
+                </li>
+            {% endif %}
+         {% endfor %}
+         {% if page_obj.has_next %}
+         <li class="page-num">
+             <a href="?page={{ page_obj.next_page_number }}">&gt;</a>
+         </li>
+         {% endif %}
+     </ul>
+</nav>
+{% endif %}
+<!--    <p> Всего машин : {{ cars | length  }} </p>-->
+{% endblock content %}

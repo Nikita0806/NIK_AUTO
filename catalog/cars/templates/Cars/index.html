@@ -1,0 +1,8 @@
+{% extends 'cars/base.html' %}
+
+{% block content %}
+    <h1>{{ title }}</h1>
+    {% if auth %}
+    <p><a href="{% url 'addcar' %}">Предложить автомобиль</a></p>
+    {% endif %}
+{% endblock content %}

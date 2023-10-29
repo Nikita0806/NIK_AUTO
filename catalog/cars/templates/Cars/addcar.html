@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<!--{% load static %}-->
+<!--<html>-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Предложить автомобиль</title>-->
+<!--    <link rel="shortcut icon" href="{% static 'cars/images/logo.ico' %}" type="image/x-icon"/>-->
+<!--</head>-->
+<!--<body background="https://phonoteka.org/uploads/posts/2021-05/1621005305_9-phonoteka_org-p-fon-dlya-saita-s-mashinami-9.jpg">-->
+
+<!--<h2 style="text-align-last: center;">  Добавление автомобиля:</h2>-->
+<!--<form action="{% url 'addcar' %}" method="post" enctype="multipart/form-data">-->
+<!--    <ul>-->
+<!--        {% csrf_token %}-->
+<!--        {{ form.as_p }}-->
+<!--    </ul>-->
+<!--    <button type="submit">Предложить авто</button>-->
+<!--    </form>-->
+<!--</body>-->
+<!--</html>-->
+<!--style="width: 285px;margin: 23px;background-color: #f5f5f5;border-radius: 54px;list-style-type: none;padding: 15px;clear: both;text-align: center;float: left;border: groove;position: absolute;top: 5%;left: 38.3%;"-->
+{% block content %}
+<html>
+<head>
+<style>
+
+#id_marka{
+    padding-right: 598px;
+    padding-bottom: 20px;
+    margin-top: 4px;
+    background: #f1f1f1;
+    border-top-style: solid;
+    border-left-style: solid;
+}
+#id_model{
+    padding-right: 601px;
+    padding-bottom: 20px;
+    margin-top: 4px;
+    background: #f1f1f1;
+    border-top-style: solid;
+    border-left-style: solid;
+}
+#id_cuzov{
+    padding-right: 563px;
+    padding-bottom: 20px;
+    margin-top: 4px;
+    background: #f1f1f1;
+    border-top-style: solid;
+    border-left-style: solid;
+}
+#id_data{
+    padding-right: 601px;
+    padding-bottom: 20px;
+    margin-top: 4px;
+    background: #f1f1f1;
+    border-top-style: solid;
+    border-left-style: solid;
+}
+#id_trans{
+    padding-right: 586px;
+    padding-bottom: 20px;
+    margin-top: 4px;
+    background: #f1f1f1;
+    border-top-style: solid;
+    border-left-style: solid;
+}
+#id_obem{
+    padding-right: 601px;
+    padding-bottom: 20px;
+    margin-top: 4px;
+    background: #f1f1f1;
+    border-top-style: solid;
+    border-left-style: solid;
+}
+#id_top{
+    padding-right: 596px;
+    padding-bottom: 20px;
+    margin-top: 4px;
+    background: #f1f1f1;
+    border-top-style: solid;
+    border-left-style: solid;
+}
+#id_priv{
+    padding-right: 586px;
+    padding-bottom: 20px;
+    margin-top: 4px;
+    background: #f1f1f1;
+    border-top-style: solid;
+    border-left-style: solid;
+}
+#id_sost{
+    padding-right: 588px;
+    padding-bottom: 20px;
+    margin-top: 4px;
+    background: #f1f1f1;
+    border-top-style: solid;
+    border-left-style: solid;
+}
+#id_uchet{
+    padding-right: 602px;
+    padding-bottom: 20px;
+    margin-top: 4px;
+    background: #f1f1f1;
+    border-top-style: solid;
+    border-left-style: solid;
+}
+#id_pts{
+    padding-right: 565px;
+    padding-bottom: 20px;
+    margin-top: 4px;
+    background: #f1f1f1;
+    border-top-style: solid;
+    border-left-style: solid;
+}
+#id_price {
+  padding-right: 5px;
+  padding-left: 6px;
+  display: inline-block;
+  height: 40px;
+  width: 672px;
+  background: #f1f1f1;
+  border-top-style: solid;
+  border-left-style: solid;
+  margin-top: 4px;
+}
+#id_probeg {
+  padding-right: 5px;
+  padding-left: 6px;
+  display: inline-block;
+  height: 40px;
+  width: 672px;
+  background: #f1f1f1;
+  border-top-style: solid;
+  border-left-style: solid;
+  margin-top: 4px;
+}
+#id_ls {
+  padding-right: 5px;
+  padding-left: 6px;
+  display: inline-block;
+  height: 40px;
+  width: 672px;
+  background: #f1f1f1;
+  border-top-style: solid;
+  border-left-style: solid;
+  margin-top: 4px;
+}
+#id_vlad {
+  padding-right: 5px;
+  padding-left: 6px;
+  display: inline-block;
+  height: 40px;
+  width: 672px;
+  background: #f1f1f1;
+  border-top-style: solid;
+  border-left-style: solid;
+  margin-top: 4px;
+}
+#id_photo1 {
+    background: #f1f1f1;
+    padding: 13px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+    margin-top: 4px;
+}
+#id_photo2 {
+    background: #f1f1f1;
+    padding: 13px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+    margin-top: 4px;
+}
+#id_photo3 {
+    background: #f1f1f1;
+    padding: 13px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+    margin-top: 4px;
+}
+#id_opis {
+    padding-right: 16px;
+    height: 166px;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: black;
+
+}
+
+* {
+    box-sizing: border-box;
+
+}
+
+
+/* Add padding to containers */
+.container {
+    padding: 16px;
+    background-color: white;
+
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 0px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+}
+
+/* Overwrite default styles of hr */
+hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom: 25px;
+}
+
+/* Set a style for the submit button */
+.registerbtn {
+    background-color: #384c76;
+    color: white;
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+}
+
+.registerbtn:hover {
+    opacity: 1;
+}
+
+/* Add a blue text color to links */
+a {
+    color: dodgerblue;
+}
+
+/* Set a grey background color and center the text of the "sign in" section */
+.signin {
+    background-color: #f1f1f1;
+    text-align: center;
+}
+</style>
+</head>
+<body background="https://phonoteka.top/uploads/posts/2021-05/1619823165_6-phonoteka_org-p-fon-dlya-saita-avtomobilnoi-tematiki-7.jpg">
+<form action="{% url 'addcar' %}" method="post" enctype="multipart/form-data">
+  <div class="container" style="margin-left: 400px;margin-right: 400px;margin-top: 20px;">
+    <h2 style="text-align: center;">Добавление автомобиля</h2>
+  {% csrf_token %}
+  {{ form.as_p }}
+    <button type="submit" class="registerbtn">Предложить</button>
+  </div>
+</form>
+</body>
+</html>
+
+{% endblock %}

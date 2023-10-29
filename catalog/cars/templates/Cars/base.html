@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ru" >
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+
+    <h1>Л а й т - А в т о</h1>
+    <link type="text/css" href="{% static 'cars/css/styles.css' %}" rel="stylesheet" />
+</head>
+<body background="https://phonoteka.top/uploads/posts/2021-05/1619823165_6-phonoteka_org-p-fon-dlya-saita-avtomobilnoi-tematiki-7.jpg">
+  {% block mainmenu %}
+  <div class="header">
+  <ul id="mainmenu" class="mainmenu">
+      <li class="logo">
+          <img src="https://s.auto.drom.ru/i24280/dealers/dealer/desc/114511/gen380_282a98d8-d104-439e-82b3-6f5c6441b3fc.jpg" width="80" height="40" align="middle" alt="Лого" class="leftimg"><a href="tel:+79200719107">+7 (920) 071-91-07</a>
+          <a href="{% url 'auto' %}"><div class="logo"></div></a></li>
+    {% for m in menu %}
+        <li><a href="{% url m.url_name %}">{{ m.title }}</a></li>
+    {% endfor %}
+      {% if request.user.is_authenticated %}
+        <li class="last"> <a href="{% url 'addcar' %}">Предложить авто</a> | {{user.username}} | <a href="{% url 'logout' %}">Выйти</a> </li>
+      {% else %}
+        <li class="last"><a href="{% url 'register' %}">Регистрация</a> | <a href="{% url 'login' %}"> Войти</a></li>
+      {% endif %}
+  </ul>
+  </div>
+  {% endblock mainmenu %}
+  {% block content %}
+  {% endblock content %}
+</body>
+</html>
